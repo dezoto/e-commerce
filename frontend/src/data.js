@@ -30,7 +30,7 @@ const data = {
             price:220,
             brand:'Lacoste',
             rating: 4.5,
-            numReviews: 10,
+            numReviews: 17,
             description: 'high quality product'
         },
         {
@@ -41,7 +41,7 @@ const data = {
             price:78,
             brand:'Nike',
             rating: 5.0,
-            numReviews: 10,
+            numReviews: 14,
             description: 'high quality product'
         },
         {
