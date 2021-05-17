@@ -26,6 +26,36 @@ header {
     background-color: #1b9ce5;
 }
 
+.right-nav {
+    display: flex;
+    flex-direction: row;
+    margin-right: 3rem;
+}
+
+.signin {
+    padding: 1rem 1rem;
+    border-radius: 2rem;
+    background-color: #f79e02;
+    transition: 0.2s all ease-out;
+}
+
+.signin:hover {
+    background-color: white;
+}
+
+.signin a:hover {
+    color: #1b9ce5;
+}
+
+.right-nav div {
+    padding: 1rem 1rem;
+    border-radius: 2rem;
+}
+
+.right-nav div a {
+    font-weight: 600;
+}
+
 header a {
     color: white;
     padding: 1rem;
@@ -68,7 +98,7 @@ a {
     text-decoration: none;
 }
 
-a:hover {
+body a:hover {
     color: #f79e02;
 }
 
