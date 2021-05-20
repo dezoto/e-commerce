@@ -110,6 +110,10 @@ footer {
   flex: 2 1 50rem;
 }
 
+.min-30 {
+  min-width: 30rem;
+}
+
 h1 {
   font-size: 1.8rem;
   padding: 1rem 0;
@@ -191,6 +195,11 @@ img.medium {
   width: 100%;
 }
 
+img.small {
+  max-width: 5rem;
+  width: 100%;
+}
+
 .card {
   border: 0.1rem #c0c0c0 solid;
   background-color: #f8f8f8;
@@ -244,3 +253,5 @@ img.medium {
   color: #a02020;
   background-color: #ffe0e0;
 }
+
+
