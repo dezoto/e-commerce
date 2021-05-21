@@ -22,7 +22,7 @@ productRouter.get(
   })
 );
 
-productRouter.get('/:id', expressAsyncHandler(async (req, res) => { //api for product details
+productRouter.get('/:id', expressAsyncHandler(async (req, res) => { //api for product details to send to the frontend
     const product = await Product.findById(req.params.id);
     if(product) {
         res.send(product)
