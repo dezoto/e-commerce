@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
 html {
   font-size: 62.5%;
   box-sizing: border-box;
@@ -181,6 +183,11 @@ a.brand {
   color: white;
   font-size: 3rem;
   font-weight: bold;
+  font-family: 'Righteous', cursive;
+}
+
+a.brand:hover {
+  color: white;
 }
 
 img {
@@ -227,6 +234,10 @@ img.small {
 
 .rating span:last-child {
   color: #404040;
+}
+
+.loading {
+  display: block !important;
 }
 
 .success {
@@ -277,19 +288,21 @@ img.small {
 }
 
 .dropdown-content {
-  position: relative;
-  display: none;
-  right: 0;
-  top: 5rem;
+  position: absolute;
+  right: -2rem;
   min-width: 12rem;
   padding: 1rem;
   z-index: 1;
   background-color: #1b9ce5;
+  border: 0.1rem solid white;
   margin: 0;
   margin-top: 0.4rem;
   border-radius: 0.5rem;
+  opacity: 0;
+  transition: all 0.2 ease-in-out;
 }
 
 .dropdown:hover .dropdown-content{
-  display:contents;
+  display:block;
+  opacity: 1;
 }
