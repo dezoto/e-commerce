@@ -271,7 +271,7 @@ img.small {
   margin: 0 auto;
 }
 
-.form div {
+.form > div {
   display: flex;
   flex-direction: column;
   margin: 1rem;
@@ -279,7 +279,6 @@ img.small {
 
 .form label {
   margin: 1rem 0;
-  display: block;
 }
 
 .dropdown {
