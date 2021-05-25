@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import CheckoutSteps from "../components/CheckoutSteps";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { createOrder } from "../actions/orderActions";
+import * as actions from "../constants/orderContants";
+import MessageBox from "../components/MessageBox";
+import LoadingBox from "../components/LoadingBox";
 
 function PlaceOrderScreen(props) {
   const cart = useSelector((state) => state.cart);
@@ -16,9 +20,20 @@ function PlaceOrderScreen(props) {
   if (!cart.paymentMethod) {
     props.history.push("/payment");
   }
+  const orderCreate = useSelector((state) => state.orderCreate);
+  const { loading, success, error, order } = orderCreate;
+  const dispatch = useDispatch();
   const placeOrderHandler = () => {
-
-  }
+    dispatch(createOrder({ ...cart, orderItems: cart.cartItems }));
+  };
+  useEffect(() => {
+    if (success) {
+      props.history.push(`/order/${order._id}`);
+      dispatch({
+        type: actions.ORDER_CREATE_RESET,
+      });
+    }
+  }, [success]); // eslint-disable-line
   return (
     <div>
       <CheckoutSteps step1 step2 step3 step4 />
@@ -117,6 +132,8 @@ function PlaceOrderScreen(props) {
                   Place Order
                 </button>
               </li>
+              {loading && <LoadingBox />}
+              {error && <MessageBox varient="danger">{error}</MessageBox>}
             </ul>
           </div>
         </div>
