@@ -5,11 +5,11 @@ export const userSigninReducer = (state = {}, action) => {
     case actions.USER_SIGNIN_REQUEST:
       return { loading: true };
     case actions.USER_SIGNIN_SUCCESS:
-        return {loading: false, userInfo: action.payload};
+      return { loading: false, userInfo: action.payload };
     case actions.USER_SIGNIN_FAIL:
-        return {loading: false, error: action.payload};
+      return { loading: false, error: action.payload };
     case actions.USER_SIGNOUT:
-        return {}; //removes data from userInfo
+      return {}; //removes data from userInfo
     default:
       return state;
   }
@@ -20,9 +20,22 @@ export const userRegisterReducer = (state = {}, action) => {
     case actions.USER_REGISTER_REQUEST:
       return { loading: true };
     case actions.USER_REGISTER_SUCCESS:
-        return {loading: false, userInfo: action.payload};
+      return { loading: false, userInfo: action.payload };
     case actions.USER_REGISTER_FAIL:
-        return {loading: false, error: action.payload};
+      return { loading: false, error: action.payload };
+    default:
+      return state;
+  }
+};
+
+export const userDetailsReducer = (state = { loading: true }, action) => {
+  switch (action.type) {
+    case actions.USER_DETAILS_REQUEST:
+      return { loading: true };
+    case actions.USER_DETAILS_SUCCESS:
+      return { loading: false, user: action.payload };
+    case actions.USER_DETAILS_FAIL:
+      return { loading: false, error: action.payload };
     default:
       return state;
   }

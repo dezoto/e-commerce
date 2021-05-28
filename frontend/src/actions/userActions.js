@@ -61,3 +61,28 @@ export const register = (name, email, password) => async (dispatch) => {
     });
   }
 };
+
+export const detailsUser = (userId) => async (dispatch, getState) => {
+  dispatch({
+    type: actions.USER_DETAILS_REQUEST,
+    payload: userId,
+  });
+  const {
+    userSignin: { userInfo },
+  } = getState();
+  try {
+    const { data } = await axios.get(`/api/users/${userId}`, {
+      headers: { Authorization: `Bearer ${userInfo.token}` },
+    });
+    dispatch({ type: actions.USER_DETAILS_SUCCESS, payload: data });
+  } catch (error) {
+    const message =
+      error.response && error.response.data.message
+        ? error.response.data.message
+        : error.message;
+    dispatch({
+      type: actions.USER_DETAILS_FAIL,
+      payload: message,
+    });
+  }
+};
