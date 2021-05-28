@@ -9,7 +9,7 @@ import { PayPalButton } from "react-paypal-button-v2";
 import * as actions from '../constants/orderContants';
 
 function OrderScreen(props) {
-  const orderId = props.match.params.id; //W2Yi2MCW/qs#4//
+  const orderId = props.match.params.id;
   const [sdkReady, setSdkReady] = useState(false);
   const dispatch = useDispatch();
   const orderDetails = useSelector((state) => state.orderDetails);

@@ -179,6 +179,10 @@ button.block {
   width: 100%;
 }
 
+button.small {
+  font-size: 1.2rem;
+}
+
 a.brand {
   color: white;
   font-size: 3rem;
@@ -294,8 +298,8 @@ img.small {
 .dropdown-content {
   position: absolute;
   right: -2rem;
-  min-width: 12rem;
-  padding: 1rem;
+  min-width: 12.5rem;
+  padding-bottom: 1rem;
   z-index: 1;
   background-color: #1b9ce5;
   border: 0.1rem solid white;
@@ -304,6 +308,7 @@ img.small {
   border-radius: 0.5rem;
   display: none;
   transition: all 0.2 ease-in-out;
+  text-align: center;
 }
 
 .dropdown:hover .dropdown-content{
@@ -321,4 +326,23 @@ img.small {
 .checkout-steps div.active {
   border-top: 0.3rem #f79e02 solid;
   color: #f79e02;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table tbody tr:nth-of-type(odd) {
+  background-color: #f4f4f4;
+}
+
+.table td, .table th {
+  text-align: left;
+  border: 0.1rem solid #e4e4e4;
+  padding: 0.5rem;
+}
+
+.table button {
+  margin: 0 0.2rem;
 }
