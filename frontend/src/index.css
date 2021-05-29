@@ -308,7 +308,7 @@ img.small {
   border-radius: 0.5rem;
   display: none;
   transition: all 0.2 ease-in-out;
-  text-align: center;
+  text-align: start;
 }
 
 .dropdown:hover .dropdown-content{
